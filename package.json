@@ -1,21 +1,21 @@
 {
   "name": "mongoose-query",
-  "description": "mongoose Query lib",
+  "description": "Fork of mongoose Query lib",
   "keywords": ["mongoose", "query", "mongodb"],
-  "version": "0.2.0",
-  "homepage": "https://github.com/jupe/mongoose-query",
-  "author": "Jussi Vatjus-Anttila <jussiva@gmail.com>)",
+  "version": "0.2.1",
+  "homepage": "https://github.com/kariponkko/mongoose-query.git",
+  "author": "Kari Pönkkö <kari.ponkko@gmail.com>)",
   "main": "lib/index",
   "bugs" : {
     "url" : "https://github.com/jupe/mongoose-query/issues"
   },
   "repository": {
         "type": "git",
-        "url": "https://github.com/jupe/mongoose-query"
+        "url": "https://github.com/kariponkko/mongoose-query"
   },
   "licenses" : [
       { "type" : "MIT"
-      , "url" : "https://github.com/jupe/mongoose-query/blob/master/LICENSE"
+      , "url" : "https://github.com/kariponkko/mongoose-query/blob/master/LICENSE"
       }
     ],
   "dependencies": {
@@ -29,7 +29,8 @@
       "request": "*"
   },
   "contributors": [
-    "Jussi Vatjus-Anttila <jussiva@gmail.com>"
+    "Jussi Vatjus-Anttila <jussiva@gmail.com>",
+    "Kari Pönkkö <kari.ponkko@gmail.com>"
   ],
   "scripts": {
    "test": "mocha -R list"

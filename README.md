@@ -6,13 +6,14 @@ mongoose-query [![Build Status](https://travis-ci.org/jupe/mongoose-query.png?br
 [![NPM](https://nodei.co/npm-dl/mongoose-query.png)](https://nodei.co/npm/mongoose-query/)
 
 mongoose query creator. Alternative for mongoose-api-query but without schema understanding.
-This very simple library can be used for example expressjs+mongoose applications to help 
+This very simple library can be used for example expressjs+mongoose applications to help
 construct mongoose query model directly from url parameters.
 
 ## History
 
 |versio|Changes|
 |------|-------|
+|0.2.1|Fixed the aggregate|
 |0.2.0|replace underscore with lodash, possible to return promise when no callback in use|
 |0.1.7|typo on mapReduce case, !empty keyword added|
 |0.1.6|Support for complex populate query and mapReduce improvements|
@@ -62,11 +63,11 @@ http://www.myserver.com/query?[q=<query>][&t=<type>][&f=<fields>][&s=<order>][&s
 q=<query>                   restrict results by the specified JSON query
                             regex e.g. q='{"field":{"$regex":"/mygrep/", "$options":"i"}}'
 t=<type>                    find|findOne|count|aggregate|distinct|aggregate|mapReduce
-f=<set of fields>           specify the set of fields to include or exclude in each document 
+f=<set of fields>           specify the set of fields to include or exclude in each document
                             (1 - include; 0 - exclude)
-s=<sort order>              specify the order in which to sort each specified field 
+s=<sort order>              specify the order in which to sort each specified field
                             (1- ascending; -1 - descending), JSON
-sk=<num results to skip>    specify the number of results to skip in the result set; 
+sk=<num results to skip>    specify the number of results to skip in the result set;
                             useful for paging
 l=<limit>                   specify the limit for the number of results (default is 1000)
 p=<populate>                specify the fields for populate, also more complex json object is supported.
@@ -78,7 +79,7 @@ reduce=<reduceFunction>     mongodb reduce function as string
                             e.g. "function(key, values) {return result;}"
 fl=<boolean>                Flat results or not
 
-  
+
 Alternative search conditions:
 "key={in}a,b"               At least one of these is in array
 "key={nin}a,b"              Any of these values is not in array
@@ -93,9 +94,9 @@ Alternative search conditions:
 
 Results:
 
-fl=false 
+fl=false
 [
- { 
+ {
  	nest: {
  		ed: {
  			data: 'value',
@@ -111,7 +112,3 @@ fl=true
   'nest.ed.data2':'value'},
 ]
 ```
-
-
-
-
